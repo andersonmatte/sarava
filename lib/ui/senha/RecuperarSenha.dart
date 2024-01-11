@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../infra/color/AppColors.dart';
-import '../../infra/text/TextFormFieldLoginCustom.dart';
+import '../../infra/text/SaravaSpacer.dart';
+import '../../infra/text/SaravaTextFormFieldLoginCustom.dart';
+import '../../infra/text/SaravaTextLabelCustom.dart';
+import '../../infra/text/SaravaTextLabelGenericCustom.dart';
 import '../cadastro/Cadastro.dart';
 
 void main() => runApp(RecuperarSenha());
@@ -103,50 +106,27 @@ class RecuperarSenhaState extends State<RecuperarSenhaPage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      const Text('A nova senha deve ter entre 6 e 8 caracteres.',
-                          style: TextStyle(
-                            color: AppColors.vermelho,
-                            fontSize: 12,
-                            fontFamily: 'Poller One',
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(height: 16),
-                      const Text('E-mail',
-                          style: TextStyle(
-                            color: AppColors.preto,
-                            fontSize: 14,
-                            fontFamily: 'Poller One',
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(height: 16),
-                      TextFormFieldLoginCustom(
+                      SaravaSpacer.pp(),
+                      SaravaTextLabelGenericCustom(label: 'A nova senha deve ter entre 6 e 8 caracteres.', size: 12, color: AppColors.vermelho),
+                      SaravaSpacer.m(),
+                      SaravaTextLabelCustom(label: 'E-mail'),
+                      SaravaSpacer.m(),
+                      SaravaTextFormFieldLoginCustom(
                           labelText: 'E-mail', controller: emailController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
-                      const SizedBox(height: 16),
-                      const Text('Senha',
-                          style: TextStyle(
-                            color: AppColors.preto,
-                            fontSize: 14,
-                            fontFamily: 'Poller One',
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(height: 16),
-                      TextFormFieldLoginCustom(labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
-                      const SizedBox(height: 16),
-                      const Text('Confirmar senha',
-                          style: TextStyle(
-                            color: AppColors.preto,
-                            fontSize: 14,
-                            fontFamily: 'Poller One',
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(height: 16),
-                      TextFormFieldLoginCustom(
+                      SaravaSpacer.m(),
+                      SaravaTextLabelCustom(label: 'Senha'),
+                      SaravaSpacer.m(),
+                      SaravaTextFormFieldLoginCustom(
+                          labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
+                      SaravaSpacer.m(),
+                      SaravaTextLabelCustom(label: 'Confirmar senha'),
+                      SaravaSpacer.m(),
+                      SaravaTextFormFieldLoginCustom(
                           labelText: 'Confirmar senha',
                           controller: repetirSenhaController,
                           hint: 'Confirme a nova senha',
                           type: TextInputType.number),
-                      const SizedBox(height: 16),
+                      SaravaSpacer.m(),
                       Padding(
                         padding: const EdgeInsets.only(left: 16, right: 16),
                         child: Align(
@@ -170,7 +150,7 @@ class RecuperarSenhaState extends State<RecuperarSenhaPage> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      SaravaSpacer.m(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

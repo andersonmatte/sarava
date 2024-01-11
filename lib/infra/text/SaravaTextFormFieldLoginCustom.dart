@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 
 import '../color/AppColors.dart';
 
-class TextFormFieldCustom extends StatefulWidget {
+class SaravaTextFormFieldLoginCustom extends StatefulWidget {
   String labelText;
   TextEditingController controller;
   String hint;
   TextInputType type;
 
-  TextFormFieldCustom({required this.labelText, required this.controller, required this.hint, required this.type});
+  SaravaTextFormFieldLoginCustom({required this.labelText, required this.controller, required this.hint, required this.type});
 
   @override
-  State<TextFormFieldCustom> createState() => _TextFormFieldCustomState();
+  State<SaravaTextFormFieldLoginCustom> createState() => _SaravaTextFormFieldLoginCustomState();
 }
 
-class _TextFormFieldCustomState extends State<TextFormFieldCustom> {
+class _SaravaTextFormFieldLoginCustomState extends State<SaravaTextFormFieldLoginCustom> {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.brancof8,
+        color: AppColors.branco,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.black),
       ),

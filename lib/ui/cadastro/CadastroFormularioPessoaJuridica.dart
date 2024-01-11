@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../infra/color/AppColors.dart';
-import '../../../infra/text/TextFormFieldCustom.dart';
+import '../../../infra/text/SaravaTextFormFieldCustom.dart';
+import '../../infra/text/SaravaSpacer.dart';
+import '../../infra/text/SaravaTextLabelCustom.dart';
+import '../../infra/text/SaravaTextLabelGenericCustom.dart';
 import '../../infra/toast/ToastCustom.dart';
 import 'Cadastro.dart';
 
@@ -65,186 +68,115 @@ class CadastroFormularioPessoaJuridicaState extends State<CadastroFormularioPess
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text('Dados Empresa',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 17,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 16),
-                const Text('Razão Social',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(
+                SaravaTextLabelGenericCustom(
+                  label: 'Dados Empresa',
+                  size: 17,
+                  color: AppColors.preto,
+                ),
+                SaravaSpacer.m(),
+                SaravaTextLabelCustom(label: 'Razão Social'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(
                     labelText: 'Razão Social', controller: razaoSocialController, hint: 'Informe sua razão social', type: TextInputType.text),
-                const SizedBox(height: 8),
-                const Text('CNPJ',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(labelText: 'CNPJ', controller: cnpjController, hint: 'Informe seu CNPJ', type: TextInputType.number),
-                const SizedBox(height: 8),
-                const Text('E-mail',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(labelText: 'E-mail', controller: emailController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
-                const SizedBox(height: 16),
-                const Text('Endereço',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 17,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 16),
+                SaravaSpacer.p(),
+                SaravaTextLabelCustom(label: 'CNPJ'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(labelText: 'CNPJ', controller: cnpjController, hint: 'Informe seu CNPJ', type: TextInputType.number),
+                SaravaSpacer.p(),
+                SaravaTextLabelCustom(label: 'E-mail'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(
+                    labelText: 'E-mail', controller: emailController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
+                SaravaSpacer.m(),
+                SaravaTextLabelGenericCustom(
+                  label: 'Endereço',
+                  size: 17,
+                  color: AppColors.preto,
+                ),
+                SaravaSpacer.m(),
                 Column(
                   children: [
-                    const Row(
-                      children: [
-                        Expanded(
-                          flex: 7,
-                          child: Text('Logradouro',
-                              style: TextStyle(color: AppColors.preto, fontSize: 14, fontFamily: 'Poller One', fontWeight: FontWeight.bold)),
-                        ),
-                        SizedBox(width: 40),
-                        Expanded(
-                          flex: 3,
-                          child: Text('Nº',
-                              style: TextStyle(color: AppColors.preto, fontSize: 14, fontFamily: 'Poller One', fontWeight: FontWeight.bold)),
-                        ),
-                        SizedBox(width: 8),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
                     Row(
                       children: [
                         Expanded(
                           flex: 7,
-                          child: TextFormFieldCustom(
+                          child: SaravaTextLabelCustom(label: 'Logradouro'),
+                        ),
+                        const SizedBox(width: 40),
+                        Expanded(
+                          flex: 3,
+                          child: SaravaTextLabelCustom(label: 'Nº'),
+                        ),
+                        SaravaSpacer.p(),
+                      ],
+                    ),
+                    SaravaSpacer.p(),
+                    Row(
+                      children: [
+                        Expanded(
+                          flex: 7,
+                          child: SaravaTextFormFieldCustom(
                               labelText: 'Logradouro', controller: logradouroController, hint: 'Informe o seu logradouro', type: TextInputType.text),
                         ),
                         const SizedBox(width: 8),
                         Expanded(
                           flex: 3,
-                          child: TextFormFieldCustom(labelText: 'Nº', controller: numeroController, hint: 'Número', type: TextInputType.number),
+                          child: SaravaTextFormFieldCustom(labelText: 'Nº', controller: numeroController, hint: 'Número', type: TextInputType.number),
                         ),
                       ],
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
-                const Text('Complemento',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(
+                SaravaSpacer.p(),
+                SaravaTextLabelCustom(label: 'Complemento'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(
                     labelText: 'Complemento', controller: complementoController, hint: 'Informe o seu complemento', type: TextInputType.text),
-                const SizedBox(height: 8),
-                const Text('Bairro',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(labelText: 'Bairro', controller: bairroController, hint: 'Informe o seu bairro', type: TextInputType.text),
-                const SizedBox(height: 8),
-                const Text('CEP',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(labelText: 'CEP', controller: cepController, hint: 'Informe o seu CEP', type: TextInputType.number),
-                const SizedBox(height: 16),
-                const Text('Representante',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 17,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 16),
-                const Text('Nome Completo',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(
+                SaravaSpacer.p(),
+                SaravaTextLabelCustom(label: 'Bairro'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(labelText: 'Bairro', controller: bairroController, hint: 'Informe o seu bairro', type: TextInputType.text),
+                SaravaSpacer.p(),
+                SaravaTextLabelCustom(label: 'CEP'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(labelText: 'CEP', controller: cepController, hint: 'Informe o seu CEP', type: TextInputType.number),
+                SaravaSpacer.m(),
+                SaravaTextLabelGenericCustom(
+                  label: 'Representante',
+                  size: 17,
+                  color: AppColors.preto,
+                ),
+                SaravaSpacer.m(),
+                SaravaTextLabelCustom(label: 'Nome Completo'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(
                     labelText: 'Nome Completo', controller: nomeCompletoController, hint: 'Informe seu nome completo', type: TextInputType.text),
-                const SizedBox(height: 8),
-                const Text('CPF',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(labelText: 'CPF', controller: cpfController, hint: 'Informe seu CPF', type: TextInputType.number),
-                const SizedBox(height: 16),
-                const Text('Definir Senha',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 17,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 4),
-                const Text('A senha deve ter entre 6 e 8 caracteres.',
-                    style: TextStyle(
-                      color: AppColors.branco,
-                      fontSize: 12,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 16),
-                const Text('Senha',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
-                const SizedBox(height: 8),
-                const Text('Confirmar senha',
-                    style: TextStyle(
-                      color: AppColors.preto,
-                      fontSize: 14,
-                      fontFamily: 'Poller One',
-                      fontWeight: FontWeight.bold,
-                    )),
-                const SizedBox(height: 8),
-                TextFormFieldCustom(
+                SaravaSpacer.p(),
+                SaravaTextLabelCustom(label: 'CPF'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(labelText: 'CPF', controller: cpfController, hint: 'Informe seu CPF', type: TextInputType.number),
+                SaravaSpacer.m(),
+                SaravaTextLabelGenericCustom(
+                  label: 'Definir Senha',
+                  size: 17,
+                  color: AppColors.preto,
+                ),
+                SaravaSpacer.pp(),
+                SaravaTextLabelGenericCustom(
+                  label: 'A senha deve ter entre 6 e 8 caracteres.',
+                  size: 12,
+                  color: AppColors.branco,
+                ),
+                SaravaSpacer.m(),
+                SaravaTextLabelCustom(label: 'Senha'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
+                SaravaSpacer.p(),
+                SaravaTextLabelCustom(label: 'Confirmar senha'),
+                SaravaSpacer.p(),
+                SaravaTextFormFieldCustom(
                     labelText: 'Confirmar senha', controller: repetirSenhaController, hint: 'Confirme a sua senha', type: TextInputType.number),
-                const SizedBox(height: 8),
+                SaravaSpacer.p(),
                 Container(
                   height: 40,
                   width: 250,

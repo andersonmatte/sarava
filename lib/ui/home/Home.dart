@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../infra/color/AppColors.dart';
+import '../../infra/text/SaravaSpacer.dart';
 import '../menu/AppMenu.dart';
 
 void main() => runApp(Home());
@@ -102,7 +103,7 @@ class HomeState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    SaravaSpacer.m(),
                     const Text(
                       'Postagens',
                       style: TextStyle(

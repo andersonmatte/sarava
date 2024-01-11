@@ -14,10 +14,10 @@ class IlesState extends State<Iles> {
   Widget build(BuildContext context) {
     return AppMenu(
       pageTitle: '',
-      pageBody: Scaffold(
+      pageBody: const Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: EdgeInsets.all(25),
           child: Text("teste"),
         ),
       ),

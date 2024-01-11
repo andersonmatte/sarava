@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sarava/infra/text/SaravaTextLabelCustom.dart';
 
 import '../../../infra/color/AppColors.dart';
 import '../../../infra/toast/ToastCustom.dart';
 import '../../infra/service/PessoaService.dart';
-import '../../infra/text/TextFormFieldLoginCustom.dart';
+import '../../infra/text/SaravaSpacer.dart';
+import '../../infra/text/SaravaTextFormFieldLoginCustom.dart';
 import '../cadastro/Cadastro.dart';
 import '../home/Home.dart';
 import '../senha/RecuperarSenha.dart';
@@ -101,7 +103,7 @@ class LoginState extends State<LoginPage> {
                   child: ListView(
                     controller: scrollController,
                     children: [
-                      const SizedBox(height: 16),
+                      SaravaSpacer.m(),
                       const Center(
                         child: Text(
                           'Entre para acessar a sua conta',
@@ -111,28 +113,17 @@ class LoginState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 16),
-                      const Text('E-mail',
-                          style: TextStyle(
-                            color: AppColors.preto,
-                            fontSize: 14,
-                            fontFamily: 'Poller One',
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(height: 16),
-                      TextFormFieldLoginCustom(
+                      SaravaSpacer.m(),
+                      SaravaTextLabelCustom(label: 'E-mail'),
+                      SaravaSpacer.m(),
+                      SaravaTextFormFieldLoginCustom(
                           labelText: 'E-mail', controller: emailController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
-                      const SizedBox(height: 16),
-                      const Text('Senha',
-                          style: TextStyle(
-                            color: AppColors.preto,
-                            fontSize: 14,
-                            fontFamily: 'Poller One',
-                            fontWeight: FontWeight.bold,
-                          )),
-                      const SizedBox(height: 16),
-                      TextFormFieldLoginCustom(labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
-                      const SizedBox(height: 16),
+                      SaravaSpacer.m(),
+                      SaravaTextLabelCustom(label: 'Senha'),
+                      SaravaSpacer.m(),
+                      SaravaTextFormFieldLoginCustom(
+                          labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
+                      SaravaSpacer.m(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -143,18 +134,11 @@ class LoginState extends State<LoginPage> {
                                 MaterialPageRoute(builder: (context) => RecuperarSenha()),
                               );
                             },
-                            child: const Text(
-                              'Esqueceu a senha?',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                            child: SaravaTextLabelCustom(label: 'Esqueceu a senha?'),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 16),
+                      SaravaSpacer.m(),
                       Padding(
                         padding: const EdgeInsets.only(left: 16, right: 16),
                         child: Align(
@@ -188,7 +172,7 @@ class LoginState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      SaravaSpacer.m(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

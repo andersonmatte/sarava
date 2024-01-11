@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sarava/infra/color/AppColors.dart';
 
+import '../../infra/text/SaravaSpacer.dart';
+import '../../infra/text/SaravaTextLabelGenericCustom.dart';
 import '../menu/AppMenu.dart';
 
 class Sobre extends StatefulWidget {
@@ -24,47 +26,34 @@ class SobreState extends State<Sobre> {
               fit: BoxFit.cover,
             ),
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Versão',
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: AppColors.preto,
-                        fontFamily: 'Poller One',
-                        fontWeight: FontWeight.bold,
-                      ),
+                    SaravaTextLabelGenericCustom(
+                      label: 'Versão',
+                      size: 40,
+                      color: AppColors.preto,
                     ),
-                    SizedBox(width: 8),
-                    Text(
-                      '1.0',
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: AppColors.branco,
-                        fontFamily: 'Poller One',
-                        fontWeight: FontWeight.bold,
-                      ),
+                    SaravaSpacer.p(),
+                    SaravaTextLabelGenericCustom(
+                      label: '1.0.',
+                      size: 40,
+                      color: AppColors.branco,
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  'Estamos trabalhando incessantemente para melhorar a aplicação e facilitar a navegação de todos os nossos usuários.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontFamily: 'Poller One',
-                    fontWeight: FontWeight.bold,
-                  ),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: SaravaTextLabelGenericCustom(
+                  label: 'Estamos trabalhando incessantemente para melhorar a aplicação e facilitar a navegação de todos os nossos usuários.',
+                  size: 18,
+                  color: AppColors.preto,
                 ),
               ),
             ],
