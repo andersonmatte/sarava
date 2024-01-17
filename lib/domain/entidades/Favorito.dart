@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 import 'Casa.dart';
 import 'Fornecedor.dart';
 import 'Pessoa.dart';
@@ -10,15 +8,11 @@ Favorito favoritoFromJson(String str) => Favorito.fromJson(json.decode(str));
 
 String favoritoToJson(Favorito data) => json.encode(data.toJson());
 
-@HiveType(typeId: 8)
-class Favorito extends HiveObject {
-  @HiveField(0)
+class Favorito {
   late Pessoa pessoa;
 
-  @HiveField(1)
   late Casa casa;
 
-  @HiveField(2)
   late Fornecedor fornecedor;
 
   Favorito({

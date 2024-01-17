@@ -28,106 +28,117 @@ class HomeState extends State<HomePage> {
       pageTitle: '',
       pageBody: Scaffold(
         body: SingleChildScrollView(
-          child: Container(color: AppColors.corPrincipal,child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Destaques',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+          child: Container(
+            color: AppColors.corPrincipal,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Destaques',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              width: 70,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.0),
-                                image: const DecorationImage(
-                                  image: AssetImage('assets/images/grid1.png'),
-                                  fit: BoxFit.cover,
+                      const SizedBox(height: 8),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: 70,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  image: const DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/grid1.png'),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              width: 70,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.0),
-                                image: const DecorationImage(
-                                  image: AssetImage('assets/images/grid2.png'),
-                                  fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: 70,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  image: const DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/grid2.png'),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              width: 70,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.0),
-                                image: const DecorationImage(
-                                  image: AssetImage('assets/images/grid3.png'),
-                                  fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: 70,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  image: const DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/grid3.png'),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              width: 70,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.0),
-                                image: const DecorationImage(
-                                  image: AssetImage('assets/images/grid4.png'),
-                                  fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: 70,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  image: const DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/grid4.png'),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),),
-                          ),
-                        ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    SaravaSpacer.m(),
-                    const Text(
-                      'Postagens',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                      SaravaSpacer.m(),
+                      const Text(
+                        'Postagens',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
+                GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
+                  itemCount: 8,
+                  // Replace with the actual number of images
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return GridImage(index + 1);
+                  },
                 ),
-                itemCount: 8,
-                // Replace with the actual number of images
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return GridImage(index+1);
-                },
-              ),
-            ],
-          ),),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -169,4 +180,3 @@ class GridImage extends StatelessWidget {
     );
   }
 }
-

@@ -1,17 +1,12 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 Imagem imagemFromJson(String str) => Imagem.fromJson(json.decode(str));
 
 String imagemToJson(Imagem data) => json.encode(data.toJson());
 
-@HiveType(typeId: 10)
-class Imagem extends HiveObject {
-  @HiveField(0)
+class Imagem {
   late String imagem;
 
-  @HiveField(1)
   late int id;
 
   Imagem({

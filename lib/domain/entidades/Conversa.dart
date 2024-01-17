@@ -1,17 +1,12 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 Conversa conversaFromJson(String str) => Conversa.fromJson(json.decode(str));
 
 String conversaToJson(Conversa data) => json.encode(data.toJson());
 
-@HiveType(typeId: 11)
-class Conversa extends HiveObject {
-  @HiveField(0)
+class Conversa {
   late String dialogos;
 
-  @HiveField(1)
   late int id;
 
   Conversa({

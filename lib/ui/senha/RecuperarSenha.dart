@@ -86,7 +86,8 @@ class RecuperarSenhaState extends State<RecuperarSenhaPage> {
               initialChildSize: 0.7,
               minChildSize: 0.1,
               maxChildSize: 0.7,
-              builder: (BuildContext context, ScrollController scrollController) {
+              builder:
+                  (BuildContext context, ScrollController scrollController) {
                 return Container(
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
@@ -107,17 +108,27 @@ class RecuperarSenhaState extends State<RecuperarSenhaPage> {
                         ),
                       ),
                       SaravaSpacer.pp(),
-                      SaravaTextLabelGenericCustom(label: 'A nova senha deve ter entre 6 e 8 caracteres.', size: 12, color: AppColors.vermelho),
+                      SaravaTextLabelGenericCustom(
+                          label:
+                              'A nova senha deve ter entre 6 e 8 caracteres.',
+                          size: 12,
+                          color: AppColors.vermelho),
                       SaravaSpacer.m(),
                       SaravaTextLabelCustom(label: 'E-mail'),
                       SaravaSpacer.m(),
                       SaravaTextFormFieldLoginCustom(
-                          labelText: 'E-mail', controller: emailController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
+                          labelText: 'E-mail',
+                          controller: emailController,
+                          hint: 'Informe seu e-mail',
+                          type: TextInputType.emailAddress),
                       SaravaSpacer.m(),
                       SaravaTextLabelCustom(label: 'Senha'),
                       SaravaSpacer.m(),
                       SaravaTextFormFieldLoginCustom(
-                          labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
+                          labelText: 'Senha',
+                          controller: senhaController,
+                          hint: 'Informe sua senha',
+                          type: TextInputType.text),
                       SaravaSpacer.m(),
                       SaravaTextLabelCustom(label: 'Confirmar senha'),
                       SaravaSpacer.m(),
@@ -143,7 +154,10 @@ class RecuperarSenhaState extends State<RecuperarSenhaPage> {
                               onPressed: () async {},
                               child: Text(
                                 'redefinir'.toUpperCase(),
-                                style: const TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -156,13 +170,16 @@ class RecuperarSenhaState extends State<RecuperarSenhaPage> {
                         children: [
                           const Text(
                             'Não tem conta ainda? ',
-                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Cadastro()),
+                                MaterialPageRoute(
+                                    builder: (context) => Cadastro()),
                               );
                             },
                             child: const Text(

@@ -5,13 +5,16 @@ class SaravaTextLabelGenericCustom extends StatefulWidget {
   double size;
   Color color;
 
-  SaravaTextLabelGenericCustom({required this.label, required this.size, required this.color});
+  SaravaTextLabelGenericCustom(
+      {required this.label, required this.size, required this.color});
 
   @override
-  State<SaravaTextLabelGenericCustom> createState() => _SaravaTextLabelGenericCustomState();
+  State<SaravaTextLabelGenericCustom> createState() =>
+      _SaravaTextLabelGenericCustomState();
 }
 
-class _SaravaTextLabelGenericCustomState extends State<SaravaTextLabelGenericCustom> {
+class _SaravaTextLabelGenericCustomState
+    extends State<SaravaTextLabelGenericCustom> {
   @override
   Widget build(BuildContext context) {
     return Text(widget.label,

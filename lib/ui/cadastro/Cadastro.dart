@@ -115,23 +115,31 @@ class CadastroState extends State<CadastroPage> {
     );
   }
 
-  Widget montaCardPerfil(String title, String imagePath, TipoCadastro tipoCadastro) {
+  Widget montaCardPerfil(
+      String title, String imagePath, TipoCadastro tipoCadastro) {
     return InkWell(
       onTap: () {
-        if (tipoCadastro.name == 'Simpatizante' || tipoCadastro.name == 'Tamboreiro') {
+        if (tipoCadastro.name == 'Simpatizante' ||
+            tipoCadastro.name == 'Tamboreiro') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => CadastroFormularioPessoa(tipoCadastro.name)),
+            MaterialPageRoute(
+                builder: (context) =>
+                    CadastroFormularioPessoa(tipoCadastro.name)),
           );
         } else if (tipoCadastro.name == 'Fornecedor') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => CadastroFormularioPessoaJuridica(tipoCadastro.name)),
+            MaterialPageRoute(
+                builder: (context) =>
+                    CadastroFormularioPessoaJuridica(tipoCadastro.name)),
           );
         } else {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => CadastroFormularioPessoaSacerdote(tipoCadastro.name)),
+            MaterialPageRoute(
+                builder: (context) =>
+                    CadastroFormularioPessoaSacerdote(tipoCadastro.name)),
           );
         }
       },

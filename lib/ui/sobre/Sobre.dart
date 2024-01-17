@@ -51,7 +51,8 @@ class SobreState extends State<Sobre> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: SaravaTextLabelGenericCustom(
-                  label: 'Estamos trabalhando incessantemente para melhorar a aplicação e facilitar a navegação de todos os nossos usuários.',
+                  label:
+                      'Estamos trabalhando incessantemente para melhorar a aplicação e facilitar a navegação de todos os nossos usuários.',
                   size: 18,
                   color: AppColors.preto,
                 ),

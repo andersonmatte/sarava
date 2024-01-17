@@ -1,20 +1,14 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 Filho filhoFromJson(String str) => Filho.fromJson(json.decode(str));
 
 String filhoToJson(Filho data) => json.encode(data.toJson());
 
-@HiveType(typeId: 1)
-class Filho extends HiveObject {
-  @HiveField(0)
+class Filho {
   late int matricula;
 
-  @HiveField(1)
   late String nomeIniciado;
 
-  @HiveField(2)
   late DateTime dataVinculacaoCasa;
 
   Filho({

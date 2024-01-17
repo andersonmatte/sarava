@@ -14,7 +14,8 @@ class CadastroFormularioPessoa extends StatefulWidget {
   CadastroFormularioPessoa(this.tipoCadastro);
 
   @override
-  CadastroFormularioPessoaState createState() => CadastroFormularioPessoaState();
+  CadastroFormularioPessoaState createState() =>
+      CadastroFormularioPessoaState();
 }
 
 class CadastroFormularioPessoaState extends State<CadastroFormularioPessoa> {
@@ -47,7 +48,8 @@ class CadastroFormularioPessoaState extends State<CadastroFormularioPessoa> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Cadastro()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => Cadastro()));
           },
         ),
         backgroundColor: AppColors.corPrincipal,
@@ -69,11 +71,18 @@ class CadastroFormularioPessoaState extends State<CadastroFormularioPessoa> {
                 SaravaTextLabelCustom(label: 'Nome Completo'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Nome Completo', controller: nomeCompletoController, hint: 'Informe seu nome completo', type: TextInputType.text),
+                    labelText: 'Nome Completo',
+                    controller: nomeCompletoController,
+                    hint: 'Informe seu nome completo',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'CPF'),
                 SaravaSpacer.p(),
-                SaravaTextFormFieldCustom(labelText: 'CPF', controller: cpfController, hint: 'Informe seu CPF', type: TextInputType.number),
+                SaravaTextFormFieldCustom(
+                    labelText: 'CPF',
+                    controller: cpfController,
+                    hint: 'Informe seu CPF',
+                    type: TextInputType.number),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'Data de Nascimento'),
                 SaravaSpacer.p(),
@@ -86,21 +95,34 @@ class CadastroFormularioPessoaState extends State<CadastroFormularioPessoa> {
                 SaravaTextLabelCustom(label: 'E-mail'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'E-mail', controller: idadeController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
+                    labelText: 'E-mail',
+                    controller: idadeController,
+                    hint: 'Informe seu e-mail',
+                    type: TextInputType.emailAddress),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'Gênero'),
                 SaravaSpacer.p(),
-                SaravaTextFormFieldCustom(labelText: 'Gênero', controller: generoController, hint: 'Informe seu gênero', type: TextInputType.text),
+                SaravaTextFormFieldCustom(
+                    labelText: 'Gênero',
+                    controller: generoController,
+                    hint: 'Informe seu gênero',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'Nacionalidade'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Nacionalidade', controller: nacionalidadeController, hint: 'Informe sua nacionalidade', type: TextInputType.text),
+                    labelText: 'Nacionalidade',
+                    controller: nacionalidadeController,
+                    hint: 'Informe sua nacionalidade',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'Naturalidade'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Naturalidade', controller: naturalidadeController, hint: 'Informe sua naturalidade', type: TextInputType.text),
+                    labelText: 'Naturalidade',
+                    controller: naturalidadeController,
+                    hint: 'Informe sua naturalidade',
+                    type: TextInputType.text),
                 SaravaSpacer.m(),
                 SaravaTextLabelCustom(label: 'Definir Senha'),
                 SaravaSpacer.pp(),
@@ -112,18 +134,27 @@ class CadastroFormularioPessoaState extends State<CadastroFormularioPessoa> {
                 SaravaSpacer.m(),
                 SaravaTextLabelCustom(label: 'Senha'),
                 SaravaSpacer.p(),
-                SaravaTextFormFieldCustom(labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
+                SaravaTextFormFieldCustom(
+                    labelText: 'Senha',
+                    controller: senhaController,
+                    hint: 'Informe sua senha',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'Confirmar senha'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Confirmar senha', controller: repetirSenhaController, hint: 'Confirme a sua senha', type: TextInputType.number),
+                    labelText: 'Confirmar senha',
+                    controller: repetirSenhaController,
+                    hint: 'Confirme a sua senha',
+                    type: TextInputType.number),
                 SaravaSpacer.p(),
                 Container(
                   height: 40,
                   width: 250,
                   margin: const EdgeInsets.only(top: 30.0),
-                  decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                     onPressed: () {
                       if (validateFields()) {
@@ -156,11 +187,14 @@ class CadastroFormularioPessoaState extends State<CadastroFormularioPessoa> {
         repetirSenhaController.text.isEmpty) {
       toastCustom.showToast(context, 'Todos os campos são obrigatórios.');
       return false;
-    } else if (senhaController.text.length < 6 || senhaController.text.length > 8) {
-      toastCustom.showToast(context, 'Atenção! A senha deve ter entre 6 e 8 caracteres.');
+    } else if (senhaController.text.length < 6 ||
+        senhaController.text.length > 8) {
+      toastCustom.showToast(
+          context, 'Atenção! A senha deve ter entre 6 e 8 caracteres.');
       return false;
     } else if (senhaController.text != repetirSenhaController.text) {
-      toastCustom.showToast(context, 'Atenção! Senha e confirmação de senha devem ser iguais.');
+      toastCustom.showToast(
+          context, 'Atenção! Senha e confirmação de senha devem ser iguais.');
       return false;
     }
     return true;

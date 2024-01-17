@@ -8,13 +8,19 @@ class SaravaTextFormFieldLoginCustom extends StatefulWidget {
   String hint;
   TextInputType type;
 
-  SaravaTextFormFieldLoginCustom({required this.labelText, required this.controller, required this.hint, required this.type});
+  SaravaTextFormFieldLoginCustom(
+      {required this.labelText,
+      required this.controller,
+      required this.hint,
+      required this.type});
 
   @override
-  State<SaravaTextFormFieldLoginCustom> createState() => _SaravaTextFormFieldLoginCustomState();
+  State<SaravaTextFormFieldLoginCustom> createState() =>
+      _SaravaTextFormFieldLoginCustomState();
 }
 
-class _SaravaTextFormFieldLoginCustomState extends State<SaravaTextFormFieldLoginCustom> {
+class _SaravaTextFormFieldLoginCustomState
+    extends State<SaravaTextFormFieldLoginCustom> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,7 +47,8 @@ class _SaravaTextFormFieldLoginCustomState extends State<SaravaTextFormFieldLogi
           ),
           //labelText: labelText,
           hintText: widget.hint,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           border: InputBorder.none,
         ),
       ),

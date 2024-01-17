@@ -1,11 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sarava/ui/splash/SplashScreen.dart';
 
-import 'infra/hive/HiveData.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
- // await HiveData.init();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'SplashScreen',

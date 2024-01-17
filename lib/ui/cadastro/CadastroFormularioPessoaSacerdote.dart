@@ -20,10 +20,12 @@ class CadastroFormularioPessoaSacerdote extends StatefulWidget {
   CadastroFormularioPessoaSacerdote(this.tipoCadastro);
 
   @override
-  CadastroFormularioPessoaSacerdoteState createState() => CadastroFormularioPessoaSacerdoteState();
+  CadastroFormularioPessoaSacerdoteState createState() =>
+      CadastroFormularioPessoaSacerdoteState();
 }
 
-class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPessoaSacerdote> {
+class CadastroFormularioPessoaSacerdoteState
+    extends State<CadastroFormularioPessoaSacerdote> {
   TextEditingController nomeCasaController = TextEditingController();
   TextEditingController orixaController = TextEditingController();
   TextEditingController nacaoController = TextEditingController();
@@ -54,7 +56,8 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Cadastro()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => Cadastro()));
           },
         ),
         backgroundColor: AppColors.corPrincipal,
@@ -83,16 +86,26 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
                 SaravaTextLabelCustom(label: 'Nome Completo'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Nome Completo', controller: nomeCompletoController, hint: 'Informe seu nome completo', type: TextInputType.text),
+                    labelText: 'Nome Completo',
+                    controller: nomeCompletoController,
+                    hint: 'Informe seu nome completo',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'CPF'),
                 SaravaSpacer.p(),
-                SaravaTextFormFieldCustom(labelText: 'CPF', controller: cpfController, hint: 'Informe seu CPF', type: TextInputType.number),
+                SaravaTextFormFieldCustom(
+                    labelText: 'CPF',
+                    controller: cpfController,
+                    hint: 'Informe seu CPF',
+                    type: TextInputType.number),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'E-mail'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'E-mail', controller: emailController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
+                    labelText: 'E-mail',
+                    controller: emailController,
+                    hint: 'Informe seu e-mail',
+                    type: TextInputType.emailAddress),
                 SaravaSpacer.m(),
                 SaravaTextLabelGenericCustom(
                   label: 'Dados da Casa',
@@ -103,12 +116,18 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
                 SaravaTextLabelCustom(label: 'Nome da casa'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Nome da casa', controller: nomeCasaController, hint: 'Informe o nome da casa', type: TextInputType.text),
+                    labelText: 'Nome da casa',
+                    controller: nomeCasaController,
+                    hint: 'Informe o nome da casa',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'Nome do Orixá'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Nome do Orixá', controller: orixaController, hint: 'Informe o nome do orixá', type: TextInputType.text),
+                    labelText: 'Nome do Orixá',
+                    controller: orixaController,
+                    hint: 'Informe o nome do orixá',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 Column(
                   children: [
@@ -121,7 +140,8 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
                         const SizedBox(width: 40),
                         Expanded(
                           flex: 4,
-                          child: SaravaTextLabelCustom(label: 'Data de Fundação'),
+                          child:
+                              SaravaTextLabelCustom(label: 'Data de Fundação'),
                         ),
                         SizedBox(width: 8),
                       ],
@@ -132,13 +152,19 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
                         Expanded(
                           flex: 6,
                           child: SaravaTextFormFieldCustom(
-                              labelText: 'Nação', controller: nacaoController, hint: 'Informe a sua nação', type: TextInputType.text),
+                              labelText: 'Nação',
+                              controller: nacaoController,
+                              hint: 'Informe a sua nação',
+                              type: TextInputType.text),
                         ),
                         const SizedBox(width: 8),
                         Expanded(
                           flex: 4,
                           child: SaravaTextFormFieldCustom(
-                              labelText: 'Data de Fundação', controller: dataCriacaoCasaController, hint: 'Data', type: TextInputType.number),
+                              labelText: 'Data de Fundação',
+                              controller: dataCriacaoCasaController,
+                              hint: 'Data',
+                              type: TextInputType.number),
                         ),
                       ],
                     ),
@@ -148,7 +174,10 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
                 SaravaTextLabelCustom(label: 'Aprontado Por'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Aprontado Por', controller: aprontadoPorController, hint: 'Informe quem aprontou você', type: TextInputType.text),
+                    labelText: 'Aprontado Por',
+                    controller: aprontadoPorController,
+                    hint: 'Informe quem aprontou você',
+                    type: TextInputType.text),
                 SaravaSpacer.m(),
                 SaravaTextLabelGenericCustom(
                   label: 'Definir Senha',
@@ -164,18 +193,27 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
                 SaravaSpacer.m(),
                 SaravaTextLabelCustom(label: 'Senha'),
                 SaravaSpacer.p(),
-                SaravaTextFormFieldCustom(labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
+                SaravaTextFormFieldCustom(
+                    labelText: 'Senha',
+                    controller: senhaController,
+                    hint: 'Informe sua senha',
+                    type: TextInputType.text),
                 SaravaSpacer.p(),
                 SaravaTextLabelCustom(label: 'Confirmar senha'),
                 SaravaSpacer.p(),
                 SaravaTextFormFieldCustom(
-                    labelText: 'Confirmar senha', controller: repetirSenhaController, hint: 'Confirme a sua senha', type: TextInputType.number),
+                    labelText: 'Confirmar senha',
+                    controller: repetirSenhaController,
+                    hint: 'Confirme a sua senha',
+                    type: TextInputType.number),
                 SaravaSpacer.p(),
                 Container(
                   height: 40,
                   width: 250,
                   margin: const EdgeInsets.only(top: 30.0),
-                  decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(20)),
                   child: TextButton(
                     onPressed: () {
                       if (validateFields()) {
@@ -213,11 +251,14 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
         repetirSenhaController.text.isEmpty) {
       toastCustom.showToast(context, 'Todos os campos são obrigatórios.');
       return false;
-    } else if (senhaController.text.length < 6 || senhaController.text.length > 8) {
-      toastCustom.showToast(context, 'Atenção! A senha deve ter entre 6 e 8 caracteres.');
+    } else if (senhaController.text.length < 6 ||
+        senhaController.text.length > 8) {
+      toastCustom.showToast(
+          context, 'Atenção! A senha deve ter entre 6 e 8 caracteres.');
       return false;
     } else if (senhaController.text != repetirSenhaController.text) {
-      toastCustom.showToast(context, 'Atenção! Senha e confirmação de senha devem ser iguais.');
+      toastCustom.showToast(
+          context, 'Atenção! Senha e confirmação de senha devem ser iguais.');
       return false;
     }
     return true;
@@ -295,13 +336,15 @@ class CadastroFormularioPessoaSacerdoteState extends State<CadastroFormularioPes
             MaterialPageRoute(builder: (context) => Home()),
           );
         } else {
-          toastCustom.showToast(context, 'Erro ao realizar cadastro, revise seus dados ou entre em contato com o administrador.');
+          toastCustom.showToast(context,
+              'Erro ao realizar cadastro, revise seus dados ou entre em contato com o administrador.');
         }
       }
     } catch (error) {
       // Captura qualquer exceção lançada durante a execução do bloco try
       print('Erro: $error');
-      toastCustom.showToast(context, 'Erro durante o cadastro. Por favor, revise seus dados.');
+      toastCustom.showToast(
+          context, 'Erro durante o cadastro. Por favor, revise seus dados.');
     }
   }
 }

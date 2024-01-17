@@ -1,51 +1,38 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
 import 'package:sarava/domain/entidades/Pessoa.dart';
 
 import 'Cliente.dart';
 import 'Endereco.dart';
 
-Fornecedor fornecedorFromJson(String str) => Fornecedor.fromJson(json.decode(str));
+Fornecedor fornecedorFromJson(String str) =>
+    Fornecedor.fromJson(json.decode(str));
 
 String fornecedorToJson(Fornecedor data) => json.encode(data.toJson());
 
-@HiveType(typeId: 9)
-class Fornecedor extends HiveObject {
-  @HiveField(0)
+class Fornecedor {
   late String cnpj;
 
-  @HiveField(1)
   late List<String> contatoTelefonico;
 
-  @HiveField(2)
   late List<String> email;
 
-  @HiveField(3)
   late DateTime fundacao;
 
-  @HiveField(4)
   late int idProduto;
 
-  @HiveField(5)
   late String produto;
 
-  @HiveField(6)
   late double valorItem;
 
-  @HiveField(7)
   late int pedido;
 
-  @HiveField(8)
   late Cliente cliente;
 
-  @HiveField(9)
   late Endereco endereco;
 
-  @HiveField(10)
   late String razaoSocial;
 
-  @HiveField(11)
   late Pessoa representante;
 
   Fornecedor({
@@ -80,7 +67,8 @@ class Fornecedor extends HiveObject {
 
   Map<String, dynamic> toJson() => {
         'CNPJ': cnpj,
-        'contatoTelefonico': List<dynamic>.from(contatoTelefonico.map((x) => x)),
+        'contatoTelefonico':
+            List<dynamic>.from(contatoTelefonico.map((x) => x)),
         'e-mail': List<dynamic>.from(email.map((x) => x)),
         'fundacao': fundacao.toIso8601String(),
         'idProduto': idProduto,

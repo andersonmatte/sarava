@@ -8,10 +8,15 @@ class SaravaTextFormFieldCustom extends StatefulWidget {
   String hint;
   TextInputType type;
 
-  SaravaTextFormFieldCustom({required this.labelText, required this.controller, required this.hint, required this.type});
+  SaravaTextFormFieldCustom(
+      {required this.labelText,
+      required this.controller,
+      required this.hint,
+      required this.type});
 
   @override
-  State<SaravaTextFormFieldCustom> createState() => _SaravaTextFormFieldCustomState();
+  State<SaravaTextFormFieldCustom> createState() =>
+      _SaravaTextFormFieldCustomState();
 }
 
 class _SaravaTextFormFieldCustomState extends State<SaravaTextFormFieldCustom> {
@@ -41,7 +46,8 @@ class _SaravaTextFormFieldCustomState extends State<SaravaTextFormFieldCustom> {
           ),
           //labelText: labelText,
           hintText: widget.hint,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           border: InputBorder.none,
         ),
       ),

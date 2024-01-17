@@ -62,12 +62,15 @@ class AppMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => const Inicio(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const Inicio(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
                         var begin = const Offset(1.0, 0.0);
                         var end = Offset.zero;
                         var curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         return SlideTransition(
                           position: animation.drive(tween),
                           child: child,
@@ -84,7 +87,8 @@ class AppMenu extends StatelessWidget {
                 endIndent: 10,
               ),
               ListTile(
-                leading: const Icon(Icons.person_2_rounded, color: Colors.white),
+                leading:
+                    const Icon(Icons.person_2_rounded, color: Colors.white),
                 title: const Text(
                   'Perfil',
                   style: TextStyle(color: Colors.white, fontSize: 16),
@@ -93,12 +97,15 @@ class AppMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => const Perfil(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const Perfil(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
                         var begin = const Offset(1.0, 0.0);
                         var end = Offset.zero;
                         var curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         return SlideTransition(
                           position: animation.drive(tween),
                           child: child,
@@ -115,7 +122,8 @@ class AppMenu extends StatelessWidget {
                 endIndent: 10,
               ),
               ListTile(
-                leading: const Icon(Icons.message_outlined, color: Colors.white),
+                leading:
+                    const Icon(Icons.message_outlined, color: Colors.white),
                 title: const Text(
                   'Mensagem',
                   style: TextStyle(color: Colors.white, fontSize: 16),
@@ -124,12 +132,15 @@ class AppMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => const Mensagem(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const Mensagem(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
                         var begin = const Offset(1.0, 0.0);
                         var end = Offset.zero;
                         var curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         return SlideTransition(
                           position: animation.drive(tween),
                           child: child,
@@ -146,7 +157,8 @@ class AppMenu extends StatelessWidget {
                 endIndent: 10,
               ),
               ListTile(
-                leading: const Icon(Icons.houseboat_outlined, color: Colors.white),
+                leading:
+                    const Icon(Icons.houseboat_outlined, color: Colors.white),
                 title: const Text(
                   'Ilês',
                   style: TextStyle(color: Colors.white, fontSize: 16),
@@ -155,12 +167,15 @@ class AppMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => const Iles(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const Iles(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
                         var begin = const Offset(1.0, 0.0);
                         var end = Offset.zero;
                         var curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         return SlideTransition(
                           position: animation.drive(tween),
                           child: child,
@@ -186,12 +201,15 @@ class AppMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => const Mapa(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const Mapa(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
                         var begin = const Offset(1.0, 0.0);
                         var end = Offset.zero;
                         var curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         return SlideTransition(
                           position: animation.drive(tween),
                           child: child,
@@ -217,12 +235,15 @@ class AppMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => const Conta(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const Conta(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
                         var begin = const Offset(1.0, 0.0);
                         var end = Offset.zero;
                         var curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         return SlideTransition(
                           position: animation.drive(tween),
                           child: child,
@@ -248,12 +269,15 @@ class AppMenu extends StatelessWidget {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) => const Sobre(),
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const Sobre(),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
                         var begin = const Offset(1.0, 0.0);
                         var end = Offset.zero;
                         var curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
                         return SlideTransition(
                           position: animation.drive(tween),
                           child: child,

@@ -1,9 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sarava/infra/service/AuthService.dart';
 import 'package:sarava/infra/text/SaravaTextLabelCustom.dart';
 
 import '../../../infra/color/AppColors.dart';
 import '../../../infra/toast/ToastCustom.dart';
-import '../../infra/service/PessoaService.dart';
 import '../../infra/text/SaravaSpacer.dart';
 import '../../infra/text/SaravaTextFormFieldLoginCustom.dart';
 import '../cadastro/Cadastro.dart';
@@ -32,6 +33,8 @@ class LoginState extends State<LoginPage> {
   TextEditingController senhaController = TextEditingController();
 
   final toastCustom = ToastCustom();
+
+  AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +93,11 @@ class LoginState extends State<LoginPage> {
               initialChildSize: 0.1,
               minChildSize: 0.1,
               maxChildSize: 0.5,
-              builder: (BuildContext context, ScrollController scrollController) {
+              builder:
+                  (BuildContext context, ScrollController scrollController) {
                 return Container(
-                  padding: const EdgeInsets.only(left: 16, top: 2, right: 16, bottom: 8),
+                  padding: const EdgeInsets.only(
+                      left: 16, top: 2, right: 16, bottom: 8),
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -117,12 +122,18 @@ class LoginState extends State<LoginPage> {
                       SaravaTextLabelCustom(label: 'E-mail'),
                       SaravaSpacer.m(),
                       SaravaTextFormFieldLoginCustom(
-                          labelText: 'E-mail', controller: emailController, hint: 'Informe seu e-mail', type: TextInputType.emailAddress),
+                          labelText: 'E-mail',
+                          controller: emailController,
+                          hint: 'Informe seu e-mail',
+                          type: TextInputType.emailAddress),
                       SaravaSpacer.m(),
                       SaravaTextLabelCustom(label: 'Senha'),
                       SaravaSpacer.m(),
                       SaravaTextFormFieldLoginCustom(
-                          labelText: 'Senha', controller: senhaController, hint: 'Informe sua senha', type: TextInputType.text),
+                          labelText: 'Senha',
+                          controller: senhaController,
+                          hint: 'Informe sua senha',
+                          type: TextInputType.text),
                       SaravaSpacer.m(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -131,10 +142,12 @@ class LoginState extends State<LoginPage> {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => RecuperarSenha()),
+                                MaterialPageRoute(
+                                    builder: (context) => RecuperarSenha()),
                               );
                             },
-                            child: SaravaTextLabelCustom(label: 'Esqueceu a senha?'),
+                            child: SaravaTextLabelCustom(
+                                label: 'Esqueceu a senha?'),
                           ),
                         ],
                       ),
@@ -155,17 +168,23 @@ class LoginState extends State<LoginPage> {
                               onPressed: () async {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Home()),
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()),
                                 );
-                                // if (emailController.text.isNotEmpty && senhaController.text.isNotEmpty) {
-                                //   logar();
-                                // } else {
-                                //   toastCustom.showToast(context, 'Login e senha são obrigatórios!');
-                                // }
+                                if (emailController.text.isNotEmpty &&
+                                    senhaController.text.isNotEmpty) {
+                                  logar();
+                                } else {
+                                  toastCustom.showToast(context,
+                                      'Login e senha são obrigatórios!');
+                                }
                               },
                               child: const Text(
                                 "ENTRAR",
-                                style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -178,13 +197,16 @@ class LoginState extends State<LoginPage> {
                         children: [
                           const Text(
                             'Não tem conta ainda? ',
-                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Cadastro()),
+                                MaterialPageRoute(
+                                    builder: (context) => Cadastro()),
                               );
                             },
                             child: const Text(
@@ -210,13 +232,14 @@ class LoginState extends State<LoginPage> {
   }
 
   logar() async {
-    if (await PessoaService.login(emailController.text, senhaController.text)) {
+    User? user = await authService.signInWithEmailAndPassword(
+        emailController.text, senhaController.text, context);
+    if (user != null) {
+      print(User);
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Home()),
       );
-    } else {
-      toastCustom.showToast(context, 'Login não encontrado, revise seus dados ou entre em contato com o administrador.');
     }
   }
 }

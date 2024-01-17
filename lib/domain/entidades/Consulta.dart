@@ -1,25 +1,18 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 import 'Horario.dart';
 
 Consulta consultaFromJson(String str) => Consulta.fromJson(json.decode(str));
 
 String consultaToJson(Consulta data) => json.encode(data.toJson());
 
-@HiveType(typeId: 13)
-class Consulta extends HiveObject {
-  @HiveField(0)
+class Consulta {
   late Horario horario;
 
-  @HiveField(1)
   late String servico;
 
-  @HiveField(2)
   late int retorno;
 
-  @HiveField(3)
   late DateTime dataRetorno;
 
   Consulta({

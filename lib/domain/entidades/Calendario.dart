@@ -1,26 +1,19 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
-Calendario calendarioFromJson(String str) => Calendario.fromJson(json.decode(str));
+Calendario calendarioFromJson(String str) =>
+    Calendario.fromJson(json.decode(str));
 
 String calendarioToJson(Calendario data) => json.encode(data.toJson());
 
-@HiveType(typeId: 4)
-class Calendario extends HiveObject {
-  @HiveField(0)
+class Calendario {
   late DateTime dia;
 
-  @HiveField(1)
   late double horaInicio;
 
-  @HiveField(2)
   late double horaFim;
 
-  @HiveField(3)
   late String homenagemSanto;
 
-  @HiveField(4)
   late String obrigacao;
 
   Calendario({

@@ -1,23 +1,16 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 Servico servicoFromJson(String str) => Servico.fromJson(json.decode(str));
 
 String servicoToJson(Servico data) => json.encode(data.toJson());
 
-@HiveType(typeId: 14)
-class Servico extends HiveObject {
-  @HiveField(0)
+class Servico {
   late String nomeServico;
 
-  @HiveField(1)
   late String detalhes;
 
-  @HiveField(2)
   late String finalidadeServico;
 
-  @HiveField(3)
   late String orientacoes;
 
   Servico({

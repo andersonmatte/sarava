@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "753094060640",
+    "project_id": "sarava-3d42d",
+    "storage_bucket": "sarava-3d42d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753094060640:android:24a950bb1dd8a81f703105",
+        "android_client_info": {
+          "package_name": "br.com.sarava.sarava"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlPlbsQP5XMTT0rNrSsjGMCx3Nl7XqO5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,26 +1,18 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
 Cliente clienteFromJson(String str) => Cliente.fromJson(json.decode(str));
 
 String clienteToJson(Cliente data) => json.encode(data.toJson());
 
-@HiveType(typeId: 5)
-class Cliente extends HiveObject {
-  @HiveField(0)
+class Cliente {
   late int numeroVinculo;
 
-  @HiveField(1)
   late DateTime dataVinculacaoCasa;
 
-  @HiveField(2)
   late String casaVinculada;
 
-  @HiveField(3)
   late String pesquisarCasas;
 
-  @HiveField(4)
   late DateTime acessoAgenda;
 
   Cliente({
